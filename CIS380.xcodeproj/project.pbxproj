@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		5B7DAC3F1C0CAFE000D670C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC3E1C0CAFE000D670C3 /* AppDelegate.swift */; };
-		5B7DAC411C0CAFE000D670C3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC401C0CAFE000D670C3 /* FirstViewController.swift */; };
-		5B7DAC431C0CAFE000D670C3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC421C0CAFE000D670C3 /* SecondViewController.swift */; };
+		5B7DAC411C0CAFE000D670C3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC401C0CAFE000D670C3 /* HomeViewController.swift */; };
+		5B7DAC431C0CAFE000D670C3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC421C0CAFE000D670C3 /* MenuViewController.swift */; };
 		5B7DAC461C0CAFE000D670C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B7DAC441C0CAFE000D670C3 /* Main.storyboard */; };
 		5B7DAC481C0CAFE000D670C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B7DAC471C0CAFE000D670C3 /* Assets.xcassets */; };
 		5B7DAC4B1C0CAFE000D670C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B7DAC491C0CAFE000D670C3 /* LaunchScreen.storyboard */; };
 		5B7DAC561C0CAFE000D670C3 /* CIS380Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC551C0CAFE000D670C3 /* CIS380Tests.swift */; };
 		5B7DAC611C0CAFE000D670C3 /* CIS380UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC601C0CAFE000D670C3 /* CIS380UITests.swift */; };
+		5B7DAC6F1C0CB02C00D670C3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC6E1C0CB02C00D670C3 /* ScheduleViewController.swift */; };
+		5B7DAC731C0CC12700D670C3 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC721C0CC12700D670C3 /* LogoutViewController.swift */; };
+		F4ECC71CFAA1C41E22F6105C /* Pods_CIS380.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052D52CA2429486AABFFD34E /* Pods_CIS380.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		052D52CA2429486AABFFD34E /* Pods_CIS380.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CIS380.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7DAC3B1C0CAFE000D670C3 /* CIS380.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIS380.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7DAC3E1C0CAFE000D670C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5B7DAC401C0CAFE000D670C3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		5B7DAC421C0CAFE000D670C3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5B7DAC401C0CAFE000D670C3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5B7DAC421C0CAFE000D670C3 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5B7DAC451C0CAFE000D670C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B7DAC471C0CAFE000D670C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B7DAC4A1C0CAFE000D670C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		5B7DAC5C1C0CAFE000D670C3 /* CIS380UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CIS380UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7DAC601C0CAFE000D670C3 /* CIS380UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIS380UITests.swift; sourceTree = "<group>"; };
 		5B7DAC621C0CAFE000D670C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B7DAC6E1C0CB02C00D670C3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		5B7DAC721C0CC12700D670C3 /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		661953F915E32E03E6FC3350 /* Pods-CIS380.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIS380.release.xcconfig"; path = "Pods/Target Support Files/Pods-CIS380/Pods-CIS380.release.xcconfig"; sourceTree = "<group>"; };
+		92806AFD8B295FAD163AEA7D /* Pods-CIS380.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIS380.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CIS380/Pods-CIS380.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4ECC71CFAA1C41E22F6105C /* Pods_CIS380.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +92,8 @@
 				5B7DAC541C0CAFE000D670C3 /* CIS380Tests */,
 				5B7DAC5F1C0CAFE000D670C3 /* CIS380UITests */,
 				5B7DAC3C1C0CAFE000D670C3 /* Products */,
+				A450E45A44475E9C929ED449 /* Pods */,
+				74EDDD5CB7E2818F7254B13B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,8 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				5B7DAC3E1C0CAFE000D670C3 /* AppDelegate.swift */,
-				5B7DAC401C0CAFE000D670C3 /* FirstViewController.swift */,
-				5B7DAC421C0CAFE000D670C3 /* SecondViewController.swift */,
+				5B7DAC401C0CAFE000D670C3 /* HomeViewController.swift */,
+				5B7DAC6E1C0CB02C00D670C3 /* ScheduleViewController.swift */,
+				5B7DAC421C0CAFE000D670C3 /* MenuViewController.swift */,
+				5B7DAC721C0CC12700D670C3 /* LogoutViewController.swift */,
 				5B7DAC441C0CAFE000D670C3 /* Main.storyboard */,
 				5B7DAC471C0CAFE000D670C3 /* Assets.xcassets */,
 				5B7DAC491C0CAFE000D670C3 /* LaunchScreen.storyboard */,
@@ -128,6 +141,23 @@
 			path = CIS380UITests;
 			sourceTree = "<group>";
 		};
+		74EDDD5CB7E2818F7254B13B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				052D52CA2429486AABFFD34E /* Pods_CIS380.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A450E45A44475E9C929ED449 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92806AFD8B295FAD163AEA7D /* Pods-CIS380.debug.xcconfig */,
+				661953F915E32E03E6FC3350 /* Pods-CIS380.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B7DAC651C0CAFE000D670C3 /* Build configuration list for PBXNativeTarget "CIS380" */;
 			buildPhases = (
+				609EF6CE87DE04A9C40CB3A2 /* Check Pods Manifest.lock */,
 				5B7DAC371C0CAFE000D670C3 /* Sources */,
 				5B7DAC381C0CAFE000D670C3 /* Frameworks */,
 				5B7DAC391C0CAFE000D670C3 /* Resources */,
+				8D0274EE462F7D4E6D5BD7B4 /* Embed Pods Frameworks */,
+				1000BA59F619DD353FF485FC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,14 +290,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1000BA59F619DD353FF485FC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CIS380/Pods-CIS380-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		609EF6CE87DE04A9C40CB3A2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8D0274EE462F7D4E6D5BD7B4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CIS380/Pods-CIS380-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5B7DAC371C0CAFE000D670C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B7DAC431C0CAFE000D670C3 /* SecondViewController.swift in Sources */,
+				5B7DAC431C0CAFE000D670C3 /* MenuViewController.swift in Sources */,
 				5B7DAC3F1C0CAFE000D670C3 /* AppDelegate.swift in Sources */,
-				5B7DAC411C0CAFE000D670C3 /* FirstViewController.swift in Sources */,
+				5B7DAC411C0CAFE000D670C3 /* HomeViewController.swift in Sources */,
+				5B7DAC731C0CC12700D670C3 /* LogoutViewController.swift in Sources */,
+				5B7DAC6F1C0CB02C00D670C3 /* ScheduleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +485,7 @@
 		};
 		5B7DAC661C0CAFE000D670C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92806AFD8B295FAD163AEA7D /* Pods-CIS380.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CIS380/Info.plist;
@@ -413,6 +497,7 @@
 		};
 		5B7DAC671C0CAFE000D670C3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 661953F915E32E03E6FC3350 /* Pods-CIS380.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CIS380/Info.plist;
@@ -489,6 +574,7 @@
 				5B7DAC671C0CAFE000D670C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B7DAC681C0CAFE000D670C3 /* Build configuration list for PBXNativeTarget "CIS380Tests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +583,7 @@
 				5B7DAC6A1C0CAFE000D670C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5B7DAC6B1C0CAFE000D670C3 /* Build configuration list for PBXNativeTarget "CIS380UITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +592,7 @@
 				5B7DAC6D1C0CAFE000D670C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
