@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B6A2EF71C0FB74D00874E9F /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A2EF61C0FB74D00874E9F /* HomeTableCell.swift */; };
 		5B7DAC3F1C0CAFE000D670C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC3E1C0CAFE000D670C3 /* AppDelegate.swift */; };
 		5B7DAC411C0CAFE000D670C3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC401C0CAFE000D670C3 /* HomeViewController.swift */; };
 		5B7DAC431C0CAFE000D670C3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC421C0CAFE000D670C3 /* MenuViewController.swift */; };
@@ -16,7 +17,8 @@
 		5B7DAC561C0CAFE000D670C3 /* CIS380Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC551C0CAFE000D670C3 /* CIS380Tests.swift */; };
 		5B7DAC611C0CAFE000D670C3 /* CIS380UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC601C0CAFE000D670C3 /* CIS380UITests.swift */; };
 		5B7DAC6F1C0CB02C00D670C3 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC6E1C0CB02C00D670C3 /* ScheduleViewController.swift */; };
-		5B7DAC731C0CC12700D670C3 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC721C0CC12700D670C3 /* LogoutViewController.swift */; };
+		5B7DAC731C0CC12700D670C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC721C0CC12700D670C3 /* SettingsViewController.swift */; };
+		5BA0400D1C0F98FC0049DC10 /* ScheduleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0400C1C0F98FC0049DC10 /* ScheduleTableCell.swift */; };
 		F4ECC71CFAA1C41E22F6105C /* Pods_CIS380.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 052D52CA2429486AABFFD34E /* Pods_CIS380.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		052D52CA2429486AABFFD34E /* Pods_CIS380.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CIS380.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B6A2EF61C0FB74D00874E9F /* HomeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
 		5B7DAC3B1C0CAFE000D670C3 /* CIS380.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIS380.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7DAC3E1C0CAFE000D670C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B7DAC401C0CAFE000D670C3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +57,8 @@
 		5B7DAC601C0CAFE000D670C3 /* CIS380UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIS380UITests.swift; sourceTree = "<group>"; };
 		5B7DAC621C0CAFE000D670C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B7DAC6E1C0CB02C00D670C3 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
-		5B7DAC721C0CC12700D670C3 /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		5B7DAC721C0CC12700D670C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5BA0400C1C0F98FC0049DC10 /* ScheduleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableCell.swift; sourceTree = "<group>"; };
 		661953F915E32E03E6FC3350 /* Pods-CIS380.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIS380.release.xcconfig"; path = "Pods/Target Support Files/Pods-CIS380/Pods-CIS380.release.xcconfig"; sourceTree = "<group>"; };
 		92806AFD8B295FAD163AEA7D /* Pods-CIS380.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIS380.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CIS380/Pods-CIS380.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,8 +118,10 @@
 				5B7DAC401C0CAFE000D670C3 /* HomeViewController.swift */,
 				5B7DAC6E1C0CB02C00D670C3 /* ScheduleViewController.swift */,
 				5B7DAC421C0CAFE000D670C3 /* MenuViewController.swift */,
-				5B7DAC721C0CC12700D670C3 /* LogoutViewController.swift */,
+				5B7DAC721C0CC12700D670C3 /* SettingsViewController.swift */,
 				5B7DAC441C0CAFE000D670C3 /* Main.storyboard */,
+				5B6A2EF61C0FB74D00874E9F /* HomeTableCell.swift */,
+				5BA0400C1C0F98FC0049DC10 /* ScheduleTableCell.swift */,
 				5B7DAC471C0CAFE000D670C3 /* Assets.xcassets */,
 				5B7DAC491C0CAFE000D670C3 /* LaunchScreen.storyboard */,
 				5B7DAC4C1C0CAFE000D670C3 /* Info.plist */,
@@ -345,9 +351,11 @@
 			files = (
 				5B7DAC431C0CAFE000D670C3 /* MenuViewController.swift in Sources */,
 				5B7DAC3F1C0CAFE000D670C3 /* AppDelegate.swift in Sources */,
+				5B6A2EF71C0FB74D00874E9F /* HomeTableCell.swift in Sources */,
 				5B7DAC411C0CAFE000D670C3 /* HomeViewController.swift in Sources */,
-				5B7DAC731C0CC12700D670C3 /* LogoutViewController.swift in Sources */,
+				5B7DAC731C0CC12700D670C3 /* SettingsViewController.swift in Sources */,
 				5B7DAC6F1C0CB02C00D670C3 /* ScheduleViewController.swift in Sources */,
+				5BA0400D1C0F98FC0049DC10 /* ScheduleTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

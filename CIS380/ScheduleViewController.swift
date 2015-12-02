@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class ScheduleViewController: UITableViewController {
+    
+    var scheduleArray = [AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,40 +19,65 @@ class ScheduleViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        loadSchedule()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func pullToRefreshActivated(sender: UIRefreshControl) {
-        sender.endRefreshing();
+    @IBAction func refreshTable(sender: UIRefreshControl) {
+        loadSchedule()
+        sender.endRefreshing()
     }
     
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //        if segue.identifier == "showDetail" {
-    //            if let indexPath = self.tableView.indexPathForSelectedRow {
-    //                let object = objects[indexPath.row] as! Dictionary<String, AnyObject>
-    //                let controller = segue.destinationViewController as! DetailViewController
-    //                controller.detailItem = object
-    //            }
-    //        }
-    //    }
+    
+    func loadSchedule() {
+        let query = PFQuery(className:"employee")
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    self.scheduleArray.removeAll()
+                    for object in objects {
+                        var instance = Dictionary<String, String>()
+                        instance["URL"] = object["URL"] as? String
+                        instance["AM"] = object["AM"] as? String
+                        instance["PM"] = object["PM"] as? String
+                        instance["NAME"] = object["NAME"] as? String
+                        
+                        self.scheduleArray.append(instance)
+                        self.tableView.reloadData()
+                    }
+                }
+            } else {
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return scheduleArray.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleCell", forIndexPath: indexPath) as! ScheduleTableCell
         
-        //        if let object = objects[indexPath.row] as? Dictionary<String, AnyObject> {
-        //
-        //        }
+            if let object = scheduleArray[indexPath.row] as? Dictionary<String, String> {
+//                if let url = NSURL(string: object["URL"]!) {
+//                    if let data = NSData(contentsOfURL: url) {
+//                        cell.imageLabel.image = UIImage(data: data)
+//                    }        
+//                }
+                cell.name!.text = object["NAME"]
+                cell.timeAM!.text = object["AM"]
+                cell.timePM!.text = object["PM"]
+            }
+        
         return cell
     }
     

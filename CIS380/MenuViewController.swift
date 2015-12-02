@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class MenuViewController: UITableViewController {
+    
+    var menuArray = [AnyObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +19,8 @@ class MenuViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        loadSchedule()
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,33 +28,53 @@ class MenuViewController: UITableViewController {
     }
     
     @IBAction func pullToRefreshActivated(sender: UIRefreshControl) {
+        loadSchedule()
         sender.endRefreshing();
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "showDetail" {
-//            if let indexPath = self.tableView.indexPathForSelectedRow {
-//                let object = objects[indexPath.row] as! Dictionary<String, AnyObject>
-//                let controller = segue.destinationViewController as! DetailViewController
-//                controller.detailItem = object
-//            }
-//        }
-//    }
+    func loadSchedule() {
+        let query = PFQuery(className:"menu")
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    self.menuArray.removeAll()
+                    for object in objects {
+                        var instance = Dictionary<String, String>()
+                        instance["Name"] = object["Name"] as? String
+                        instance["Description"] = object["Description"] as? String
+                        instance["URL"] = object["URL"] as? String
+                        
+                        self.menuArray.append(instance)
+                        self.tableView.reloadData()
+                    }
+                }
+            } else {
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+    }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return menuArray.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MenuCell", forIndexPath: indexPath)
         
-//        if let object = objects[indexPath.row] as? Dictionary<String, AnyObject> {
-//            
-//        }
+        if let object = menuArray[indexPath.row] as? Dictionary<String, String> {
+            //                if let url = NSURL(string: object["URL"]!) {
+            //                    if let data = NSData(contentsOfURL: url) {
+            //                        cell.imageLabel.image = UIImage(data: data)
+            //                    }
+            //                }
+            cell.textLabel!.text = object["Name"]
+            cell.detailTextLabel?.text = object["Description"]
+        }
+        
         return cell
     }
 
