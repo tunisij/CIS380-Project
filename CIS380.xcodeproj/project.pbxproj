@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5B6A2EF71C0FB74D00874E9F /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A2EF61C0FB74D00874E9F /* HomeTableCell.swift */; };
+		5B6A2EF91C172A7800874E9F /* PFUserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A2EF81C172A7800874E9F /* PFUserExtension.swift */; };
+		5B6A2EFB1C17305500874E9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A2EFA1C17305500874E9F /* LoginViewController.swift */; };
+		5B6A2EFD1C17308D00874E9F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A2EFC1C17308D00874E9F /* SignupViewController.swift */; };
+		5B6A2EFF1C1730B000874E9F /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A2EFE1C1730B000874E9F /* ResetPasswordViewController.swift */; };
+		5B6A2F031C17385500874E9F /* RegisterRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6A2F021C17385500874E9F /* RegisterRestaurantViewController.swift */; };
 		5B7DAC3F1C0CAFE000D670C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC3E1C0CAFE000D670C3 /* AppDelegate.swift */; };
 		5B7DAC411C0CAFE000D670C3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC401C0CAFE000D670C3 /* HomeViewController.swift */; };
 		5B7DAC431C0CAFE000D670C3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7DAC421C0CAFE000D670C3 /* MenuViewController.swift */; };
@@ -42,6 +47,11 @@
 /* Begin PBXFileReference section */
 		052D52CA2429486AABFFD34E /* Pods_CIS380.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CIS380.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B6A2EF61C0FB74D00874E9F /* HomeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
+		5B6A2EF81C172A7800874E9F /* PFUserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFUserExtension.swift; sourceTree = "<group>"; };
+		5B6A2EFA1C17305500874E9F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5B6A2EFC1C17308D00874E9F /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		5B6A2EFE1C1730B000874E9F /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		5B6A2F021C17385500874E9F /* RegisterRestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRestaurantViewController.swift; sourceTree = "<group>"; };
 		5B7DAC3B1C0CAFE000D670C3 /* CIS380.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CIS380.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B7DAC3E1C0CAFE000D670C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B7DAC401C0CAFE000D670C3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +99,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B6A2F001C1730FD00874E9F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5B6A2EFA1C17305500874E9F /* LoginViewController.swift */,
+				5B6A2EFC1C17308D00874E9F /* SignupViewController.swift */,
+				5B6A2EFE1C1730B000874E9F /* ResetPasswordViewController.swift */,
+				5B6A2F021C17385500874E9F /* RegisterRestaurantViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		5B6A2F011C17311000874E9F /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				5B6A2EF61C0FB74D00874E9F /* HomeTableCell.swift */,
+				5BA0400C1C0F98FC0049DC10 /* ScheduleTableCell.swift */,
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
 		5B7DAC321C0CAFE000D670C3 = {
 			isa = PBXGroup;
 			children = (
@@ -114,14 +144,15 @@
 		5B7DAC3D1C0CAFE000D670C3 /* CIS380 */ = {
 			isa = PBXGroup;
 			children = (
+				5B7DAC441C0CAFE000D670C3 /* Main.storyboard */,
 				5B7DAC3E1C0CAFE000D670C3 /* AppDelegate.swift */,
 				5B7DAC401C0CAFE000D670C3 /* HomeViewController.swift */,
+				5B6A2EF81C172A7800874E9F /* PFUserExtension.swift */,
 				5B7DAC6E1C0CB02C00D670C3 /* ScheduleViewController.swift */,
 				5B7DAC421C0CAFE000D670C3 /* MenuViewController.swift */,
 				5B7DAC721C0CC12700D670C3 /* SettingsViewController.swift */,
-				5B7DAC441C0CAFE000D670C3 /* Main.storyboard */,
-				5B6A2EF61C0FB74D00874E9F /* HomeTableCell.swift */,
-				5BA0400C1C0F98FC0049DC10 /* ScheduleTableCell.swift */,
+				5B6A2F001C1730FD00874E9F /* Login */,
+				5B6A2F011C17311000874E9F /* TableCells */,
 				5B7DAC471C0CAFE000D670C3 /* Assets.xcassets */,
 				5B7DAC491C0CAFE000D670C3 /* LaunchScreen.storyboard */,
 				5B7DAC4C1C0CAFE000D670C3 /* Info.plist */,
@@ -349,12 +380,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6A2EFB1C17305500874E9F /* LoginViewController.swift in Sources */,
 				5B7DAC431C0CAFE000D670C3 /* MenuViewController.swift in Sources */,
+				5B6A2EFD1C17308D00874E9F /* SignupViewController.swift in Sources */,
+				5B6A2EFF1C1730B000874E9F /* ResetPasswordViewController.swift in Sources */,
 				5B7DAC3F1C0CAFE000D670C3 /* AppDelegate.swift in Sources */,
+				5B6A2EF91C172A7800874E9F /* PFUserExtension.swift in Sources */,
 				5B6A2EF71C0FB74D00874E9F /* HomeTableCell.swift in Sources */,
 				5B7DAC411C0CAFE000D670C3 /* HomeViewController.swift in Sources */,
 				5B7DAC731C0CC12700D670C3 /* SettingsViewController.swift in Sources */,
 				5B7DAC6F1C0CB02C00D670C3 /* ScheduleViewController.swift in Sources */,
+				5B6A2F031C17385500874E9F /* RegisterRestaurantViewController.swift in Sources */,
 				5BA0400D1C0F98FC0049DC10 /* ScheduleTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

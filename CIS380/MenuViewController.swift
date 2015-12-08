@@ -34,6 +34,7 @@ class MenuViewController: UITableViewController {
     
     func loadSchedule() {
         let query = PFQuery(className:"menu")
+        query.whereKey("restaurantID", equalTo: (PFUser.currentUser()?.getRestaurantID())!)
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 if let objects = objects {
@@ -66,6 +67,12 @@ class MenuViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("MenuCell", forIndexPath: indexPath)
         
         if let object = menuArray[indexPath.row] as? Dictionary<String, String> {
+            if indexPath.row % 2 == 1 {
+                cell.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0)
+            } else {
+                cell.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            }
+            
             //                if let url = NSURL(string: object["URL"]!) {
             //                    if let data = NSData(contentsOfURL: url) {
             //                        cell.imageLabel.image = UIImage(data: data)

@@ -47,6 +47,8 @@ class HomeViewController: UITableViewController, PFLogInViewControllerDelegate, 
     
     func loadSchedule() {
         let query = PFQuery(className:"news")
+        query.addDescendingOrder("createdAt")
+        query.whereKey("restaurantID", equalTo: PFUser.currentUser()!.getRestaurantID())
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 if let objects = objects {
@@ -78,6 +80,11 @@ class HomeViewController: UITableViewController, PFLogInViewControllerDelegate, 
         let cell = tableView.dequeueReusableCellWithIdentifier("HomeCell", forIndexPath: indexPath) as! HomeTableCell
         
         if let object = homeArray[indexPath.row] as? Dictionary<String, String> {
+            if indexPath.row % 2 == 1 {
+                cell.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0)
+            } else {
+                cell.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
+            }
             cell.title!.text = object["Title"]
             cell.story.text = object["Description"]
         }
@@ -95,7 +102,8 @@ class HomeViewController: UITableViewController, PFLogInViewControllerDelegate, 
     }
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
-        self.dismissViewControllerAnimated(true, completion: nil)    }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
         self.dismissViewControllerAnimated(true, completion: nil)
