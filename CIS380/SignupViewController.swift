@@ -27,6 +27,12 @@ class SignupViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if PFUser.currentUser() != nil {
+            self.dismissViewControllerAnimated(false, completion: nil)
+        }
+    }
+    
     func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -78,7 +84,8 @@ class SignupViewController: UIViewController {
             newUser.email = finalEmail
             
             let query = PFQuery(className: "RestaurantIdentification")
-            query.whereKey("restaurantID", equalTo: self.restaurantIDTextField.text!)
+            let id = self.restaurantIDTextField.text
+            query.whereKey("restaurantID", equalTo: id!)
             
             do {
                 let result = try query.findObjects()
@@ -88,8 +95,9 @@ class SignupViewController: UIViewController {
                     alert.addAction(defaultAction)
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
+                    restaurantID = self.restaurantIDTextField.text!
+                    newUser["restaurantID"] = restaurantID
                     newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
-                        
                         if ((error) != nil) {
                             let alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: UIAlertControllerStyle.Alert)
                             let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)

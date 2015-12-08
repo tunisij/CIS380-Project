@@ -18,8 +18,10 @@ class SettingsViewController: UIViewController {
     
     @IBAction func logoutButton(sender: UIButton) {
         PFUser.logOut()
-        let homeViewController = HomeViewController()
-        self.presentViewController(homeViewController, animated: true, completion: nil)
+        
+        self.performSegueWithIdentifier("logoutSegue", sender: self)
+//        let homeViewController = HomeViewController()
+//        self.presentViewController(homeViewController, animated: true, completion: nil)
     }
     
 }

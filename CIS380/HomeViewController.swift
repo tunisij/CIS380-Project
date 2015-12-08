@@ -18,15 +18,7 @@ class HomeViewController: UITableViewController, PFLogInViewControllerDelegate, 
         super.viewDidAppear(animated)
         
         if PFUser.currentUser() == nil {
-            let loginViewController = PFLogInViewController()
-            loginViewController.delegate = self
-            loginViewController.fields = [.UsernameAndPassword, .LogInButton, .SignUpButton, .PasswordForgotten, .Facebook]
-            
-            let signupViewController = PFSignUpViewController()
-            signupViewController.delegate = self
-            loginViewController.signUpController = signupViewController
-            
-            self.presentViewController(loginViewController, animated: true, completion: nil)
+            self.performSegueWithIdentifier("loginSegue", sender: self)
         } else {
             loadSchedule()
         }
@@ -91,24 +83,6 @@ class HomeViewController: UITableViewController, PFLogInViewControllerDelegate, 
         
         return cell
     }
-    
-    func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
-        
-        if (!username.isEmpty || !password.isEmpty) {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-
 
 }
 

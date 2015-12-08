@@ -26,6 +26,12 @@ class LoginViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if PFUser.currentUser() != nil {
+            self.dismissViewControllerAnimated(false, completion: nil)
+        }
+    }
+    
     func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -59,7 +65,7 @@ class LoginViewController: UIViewController {
                 spinner.stopAnimating()
                 
                 if ((user) != nil) {
-                    self.presentViewController(HomeViewController(), animated: true, completion: nil)
+                    self.dismissViewControllerAnimated(true, completion: nil)
                     
                 } else {
                     let alert = UIAlertController(title: "Error", message: "Incorrect username or password", preferredStyle: UIAlertControllerStyle.Alert)

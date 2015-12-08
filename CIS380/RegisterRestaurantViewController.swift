@@ -94,11 +94,13 @@ class RegisterRestaurantViewController: UIViewController {
                         self.presentViewController(alert, animated: true, completion: nil)
                     } else {
                         let restaurant = PFObject(className:"RestaurantIdentification")
-                        restaurant["RestaurantID"] = self.restaurantIDTextField.text
-                        restaurant["RestaurantName"] = self.restaurantNameTextField.text
+                        restaurant["restaurantID"] = self.restaurantIDTextField.text
+                        restaurant["restaurantName"] = self.restaurantNameTextField.text
                         restaurant.saveInBackgroundWithBlock {
                             (success: Bool, error: NSError?) -> Void in
                             if (success) {
+                                restaurantID = self.restaurantIDTextField.text!
+                                newUser["restaurantID"] = restaurantID
                                 newUser.signUpInBackgroundWithBlock({ (succeed, error) -> Void in
                                     if ((error) != nil) {
                                         let alert = UIAlertController(title: "Error", message: "\(error)", preferredStyle: UIAlertControllerStyle.Alert)
@@ -106,9 +108,7 @@ class RegisterRestaurantViewController: UIViewController {
                                         alert.addAction(defaultAction)
                                         self.presentViewController(alert, animated: true, completion: nil)
                                     } else {
-                                        PFUser.currentUser()?.setRestaurantID(self.restaurantIDTextField.text!)
-                                        self.prese
-                                        self.presentViewController(HomeViewController(), animated: true, completion: nil)
+                                        self.dismissViewControllerAnimated(false, completion: nil)
                                     }
                                 })
                             } else {
@@ -120,6 +120,7 @@ class RegisterRestaurantViewController: UIViewController {
                         }
                     }
                 } catch {
+                    print("error")
                 }
             }
         } else {
