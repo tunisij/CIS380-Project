@@ -19,14 +19,15 @@ extension PFUser {
 
         do {
             let object: PFObject = try PFUser.currentUser()!.fetch()
-            restaurantID = object["restaurantID"] as! String
+            restaurantID = (object["restaurantID"] as? String) == nil ? "" : (object["restaurantID"]) as! String
         } catch {
+            restaurantID = ""
         }
         return restaurantID
     }
     
     func setRestaurantID(restaurantID: String) {
-        PFUser.currentUser()?.setValue(restaurantID, forKey: "restaurantID")
+        PFUser.currentUser()!["restaurantID"] = restaurantID
         PFUser.currentUser()?.saveEventually()
     }
 }

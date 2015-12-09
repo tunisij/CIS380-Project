@@ -13,14 +13,19 @@ import ParseUI
 class HomeViewController: UITableViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate  {
 
     var homeArray = [AnyObject]()
-    
+    var indicator = UIActivityIndicatorView()
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         if PFUser.currentUser() == nil {
             self.performSegueWithIdentifier("loginSegue", sender: self)
         } else {
+            indicator.startAnimating()
+            indicator.backgroundColor = UIColor.whiteColor()
             loadSchedule()
+            indicator.stopAnimating()
+            indicator.hidesWhenStopped = true
         }
     }
     
@@ -73,7 +78,7 @@ class HomeViewController: UITableViewController, PFLogInViewControllerDelegate, 
         
         if let object = homeArray[indexPath.row] as? Dictionary<String, String> {
             if indexPath.row % 2 == 1 {
-                cell.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0)
+                cell.backgroundColor = UIColor(red: 255/255, green: 219/255, blue: 161/255, alpha: 1.0)
             } else {
                 cell.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
             }
@@ -82,6 +87,14 @@ class HomeViewController: UITableViewController, PFLogInViewControllerDelegate, 
         }
         
         return cell
+    }
+    
+    func activityIndicator() {
+        indicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 40, 40))
+        indicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+        
     }
 
 }

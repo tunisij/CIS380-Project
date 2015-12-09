@@ -70,7 +70,7 @@ class ScheduleViewController: UITableViewController {
         
             if let object = scheduleArray[indexPath.row] as? Dictionary<String, String> {
                 if indexPath.row % 2 == 1 {
-                    cell.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1.0)
+                    cell.backgroundColor = UIColor(red: 255/255, green: 219/255, blue: 161/255, alpha: 1.0)
                 } else {
                     cell.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1.0)
                 }

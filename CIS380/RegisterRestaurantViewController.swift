@@ -17,6 +17,7 @@ class RegisterRestaurantViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var restaurantNameTextField: UITextField!
     @IBOutlet weak var restaurantIDTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
     
     var checked = false
     
@@ -50,6 +51,7 @@ class RegisterRestaurantViewController: UIViewController {
             let username = self.usernameTextField.text
             let password = self.passwordTextField.text
             let email = self.emailTextField.text
+            let phoneNumber = self.phoneNumberTextField.text
             let finalEmail = email!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             let id = restaurantIDTextField.text
             
@@ -76,6 +78,11 @@ class RegisterRestaurantViewController: UIViewController {
                 let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                 alert.addAction(defaultAction)
                 self.presentViewController(alert, animated: true, completion: nil)
+            } else if phoneNumber?.characters.count < 10 {
+                let alert = UIAlertController(title: "Invalid", message: "Invalid phone number", preferredStyle: UIAlertControllerStyle.Alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alert.addAction(defaultAction)
+                self.presentViewController(alert, animated: true, completion: nil)
             } else {
                 let newUser = PFUser()
                 newUser.username = username
@@ -95,7 +102,8 @@ class RegisterRestaurantViewController: UIViewController {
                     } else {
                         let restaurant = PFObject(className:"RestaurantIdentification")
                         restaurant["restaurantID"] = self.restaurantIDTextField.text
-                        restaurant["restaurantName"] = self.restaurantNameTextField.text
+                        restaurant["RestaurantName"] = self.restaurantNameTextField.text
+                        restaurant["phoneNumber"] = self.phoneNumberTextField.text
                         restaurant.saveInBackgroundWithBlock {
                             (success: Bool, error: NSError?) -> Void in
                             if (success) {

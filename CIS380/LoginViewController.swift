@@ -44,7 +44,6 @@ class LoginViewController: UIViewController {
         let username = self.usernameTextField.text
         let password = self.passwordTextField.text
         
-        // Validate the text fields
         if username!.characters.count < 5 {
             let alert = UIAlertController(title: "Invalid", message: "Username must be at least 5 characters", preferredStyle: UIAlertControllerStyle.Alert)
             let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
@@ -76,6 +75,22 @@ class LoginViewController: UIViewController {
             })
         }
     }
+
+    @IBAction func facebookLoginClicked(sender: UITapGestureRecognizer) {
+        let permissions = ["public_profile"]
+        PFFacebookUtils.logInInBackgroundWithReadPermissions(permissions, block: {
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                if user!.getRestaurantID() != "" {
+                    self.dismissViewControllerAnimated(false, completion: nil)
+                } else {
+                    self.performSegueWithIdentifier("facebookLoginSegue", sender: self)
+                }
+            }
+        })
+    }
+    
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "signupSegue" {

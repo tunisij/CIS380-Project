@@ -101,16 +101,6 @@ static const CGFloat BFCloseButtonHeight = 12.0;
 
 #pragma mark - Layout
 
-- (CGSize)intrinsicContentSize {
-    CGSize size = self.bounds.size;
-    if (_closed || !self.hasRefererData) {
-        size.height = 0.0;
-    } else {
-        CGSize labelSize = [_labelView sizeThatFits:size];
-        size = CGSizeMake(size.width, labelSize.height + 2 * BFMarginY + self.statusBarHeight);
-    }
-    return size;
-}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
@@ -130,41 +120,7 @@ static const CGFloat BFCloseButtonHeight = 12.0;
                                     BFCloseButtonHeight + 2 * BFMarginY);
 }
 
-- (CGSize)sizeThatFits:(CGSize)size {
-    if (_closed || !self.hasRefererData) {
-        size = CGSizeMake(size.width, 0.0);
-    } else {
-        CGSize labelSize = [_labelView sizeThatFits:size];
-        size = CGSizeMake(size.width, labelSize.height + 2 * BFMarginY + self.statusBarHeight);
-    }
-    return size;
-}
 
-- (CGFloat)statusBarHeight {
-    UIApplication *application = [UIApplication sharedApplication];
-
-    BOOL include;
-    switch (_includeStatusBarInSize) {
-        case BFIncludeStatusBarInSizeAlways:
-            include = YES;
-            break;
-        case BFIncludeStatusBarInSizeIOS7AndLater: {
-            float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-            include = (systemVersion >= 7.0);
-            break;
-        }
-        case BFIncludeStatusBarInSizeNever:
-            include = NO;
-            break;
-    }
-    if (include && !application.statusBarHidden) {
-        BOOL landscape = UIInterfaceOrientationIsLandscape(application.statusBarOrientation);
-        CGRect statusBarFrame = application.statusBarFrame;
-        return landscape ? CGRectGetWidth(statusBarFrame) : CGRectGetHeight(statusBarFrame);
-    }
-
-    return 0;
-}
 
 #pragma mark - Public API
 

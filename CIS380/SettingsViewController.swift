@@ -10,18 +10,37 @@ import Parse
 
 class SettingsViewController: UIViewController {
     
-    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var restaurantIDTextField: UITextField!
+    @IBOutlet weak var callRestaurantButton: UIButton!
     
-    override func viewWillAppear(animated: Bool) {
-        username.text = PFUser.currentUser()?.username
+    var phoneNumber: String = ""
+    
+    override func viewDidLoad() {
+        restaurantIDTextField.text = PFUser.currentUser()?.getRestaurantID()
+        callRestaurantButton.hidden = true
+        let query = PFQuery(className: "RestaurantIdentification")
+        query.whereKey("restaurantID", equalTo: (PFUser.currentUser()?.getRestaurantID())!)
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects {
+                    for object in objects {
+                        self.phoneNumber = object["phoneNumber"] as! String
+                        self.callRestaurantButton.hidden = false
+                    }
+                }
+            } else {
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
     }
     
     @IBAction func logoutButton(sender: UIButton) {
         PFUser.logOut()
-        
         self.performSegueWithIdentifier("logoutSegue", sender: self)
-//        let homeViewController = HomeViewController()
-//        self.presentViewController(homeViewController, animated: true, completion: nil)
     }
     
+    @IBAction func callRestaurantButtonClicked(sender: UIButton) {
+        let url = NSURL(string: "telprompt://\(phoneNumber)")
+        UIApplication.sharedApplication().openURL(url!)
+    }
 }
