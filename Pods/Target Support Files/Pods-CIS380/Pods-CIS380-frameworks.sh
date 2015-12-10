@@ -83,15 +83,6 @@ strip_invalid_archs() {
 }
 
 
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-CIS380/Bolts.framework"
-  install_framework "Pods-CIS380/FBSDKCoreKit.framework"
-  install_framework "Pods-CIS380/FBSDKLoginKit.framework"
-  install_framework "Pods-CIS380/FBSDKShareKit.framework"
-  install_framework "Pods-CIS380/Parse.framework"
-  install_framework "Pods-CIS380/ParseFacebookUtilsV4.framework"
-  install_framework "Pods-CIS380/ParseUI.framework"
-fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-CIS380/Bolts.framework"
   install_framework "Pods-CIS380/FBSDKCoreKit.framework"

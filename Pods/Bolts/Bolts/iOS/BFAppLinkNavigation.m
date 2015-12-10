@@ -97,6 +97,45 @@ static id<BFAppLinkResolving> defaultResolver;
     }
 }
 
+- (BFAppLinkNavigationType)navigate:(NSError **)error {
+    NSURL *openedURL = nil;
+    NSError *encodingError = nil;
+    BFAppLinkNavigationType retType = BFAppLinkNavigationTypeFailure;
+
+    // Find the first eligible/launchable target in the BFAppLink.
+    for (BFAppLinkTarget *target in self.appLink.targets) {
+        NSURL *appLinkAppURL = [self appLinkURLWithTargetURL:target.URL error:&encodingError];
+        if (encodingError || !appLinkAppURL) {
+            if (error) {
+                *error = encodingError;
+            }
+        } else if ([[UIApplication sharedApplication] openURL:appLinkAppURL]) {
+            retType = BFAppLinkNavigationTypeApp;
+            openedURL = appLinkAppURL;
+            break;
+        }
+    }
+
+    if (!openedURL && self.appLink.webURL) {
+        // Fall back to opening the url in the browser if available.
+        NSURL *appLinkBrowserURL = [self appLinkURLWithTargetURL:self.appLink.webURL error:&encodingError];
+        if (encodingError || !appLinkBrowserURL) {
+            // If there was an error encoding the app link data, fail hard.
+            if (error) {
+                *error = encodingError;
+            }
+        } else if ([[UIApplication sharedApplication] openURL:appLinkBrowserURL]) {
+            // This was a browser navigation.
+            retType = BFAppLinkNavigationTypeBrowser;
+            openedURL = appLinkBrowserURL;
+        }
+    }
+
+    [self postAppLinkNavigateEventNotificationWithTargetURL:openedURL
+                                                      error:error ? *error : nil
+                                                       type:retType];
+    return retType;
+}
 
 - (void)postAppLinkNavigateEventNotificationWithTargetURL:(NSURL *)outputURL error:(NSError *)error type:(BFAppLinkNavigationType)type {
     NSString *const EVENT_YES_VAL = @"1";

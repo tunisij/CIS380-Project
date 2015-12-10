@@ -60,8 +60,9 @@
 
 /* Begin PBXFileReference section */
 		052D52CA2429486AABFFD34E /* Pods_CIS380.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CIS380.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		316714A93E2A2D5D37466867 /* Pods-Today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.release.xcconfig"; path = "Pods/Target Support Files/Pods-Today/Pods-Today.release.xcconfig"; sourceTree = "<group>"; };
-		36770A82C005C666F2AB1D67 /* Pods-Today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Today.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Today/Pods-Today.debug.xcconfig"; sourceTree = "<group>"; };
+		2DC2FB4372111AD12C3AF7F8 /* Pods-CIS380.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIS380.release.xcconfig"; path = "Pods/Target Support Files/Pods-CIS380/Pods-CIS380.release.xcconfig"; sourceTree = "<group>"; };
+		5B219EDC1C190038009381B7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Pods/../build/Debug-iphoneos/Parse.framework"; sourceTree = "<group>"; };
+		5B219EDE1C190041009381B7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts.framework"; sourceTree = "<group>"; };
 		5B6A2EF61C0FB74D00874E9F /* HomeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
 		5B6A2EF81C172A7800874E9F /* PFUserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFUserExtension.swift; sourceTree = "<group>"; };
 		5B6A2EFA1C17305500874E9F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -89,8 +90,6 @@
 		5BFBC9051C17750B001A7DD1 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Pods/../build/Debug-iphoneos/Parse.framework"; sourceTree = "<group>"; };
 		5BFBC9071C18C806001A7DD1 /* Pods_CIS380.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_CIS380.framework; path = "Pods/../build/Debug-iphoneos/Pods_CIS380.framework"; sourceTree = "<group>"; };
 		5BFBC9091C18D1F3001A7DD1 /* EnterRestaurantIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterRestaurantIDViewController.swift; sourceTree = "<group>"; };
-		661953F915E32E03E6FC3350 /* Pods-CIS380.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIS380.release.xcconfig"; path = "Pods/Target Support Files/Pods-CIS380/Pods-CIS380.release.xcconfig"; sourceTree = "<group>"; };
-		92806AFD8B295FAD163AEA7D /* Pods-CIS380.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CIS380.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CIS380/Pods-CIS380.debug.xcconfig"; sourceTree = "<group>"; };
 		B83FE8534069294D8DA603F4 /* Pods_Today.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Today.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -203,6 +202,8 @@
 		74EDDD5CB7E2818F7254B13B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B219EDE1C190041009381B7 /* Bolts.framework */,
+				5B219EDC1C190038009381B7 /* Parse.framework */,
 				5BFBC9071C18C806001A7DD1 /* Pods_CIS380.framework */,
 				5BFBC9051C17750B001A7DD1 /* Parse.framework */,
 				052D52CA2429486AABFFD34E /* Pods_CIS380.framework */,
@@ -215,10 +216,7 @@
 		A450E45A44475E9C929ED449 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				92806AFD8B295FAD163AEA7D /* Pods-CIS380.debug.xcconfig */,
-				661953F915E32E03E6FC3350 /* Pods-CIS380.release.xcconfig */,
-				36770A82C005C666F2AB1D67 /* Pods-Today.debug.xcconfig */,
-				316714A93E2A2D5D37466867 /* Pods-Today.release.xcconfig */,
+				2DC2FB4372111AD12C3AF7F8 /* Pods-CIS380.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -298,10 +296,10 @@
 						DevelopmentTeam = S9K7ZK32R7;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Keychain = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -523,12 +521,15 @@
 		};
 		5B7DAC671C0CAFE000D670C3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 661953F915E32E03E6FC3350 /* Pods-CIS380.release.xcconfig */;
+			baseConfigurationReference = 2DC2FB4372111AD12C3AF7F8 /* Pods-CIS380.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CIS380/CIS380.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = CIS380/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gvsu.CIS380;
